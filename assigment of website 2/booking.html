@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Site Visit | SK Enterprise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Outfit', 'sans-serif'] },
+                    colors: { brand: { gold: '#c29b38', dark: '#0f172a' } }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- SIMPLIFIED NAVBAR -->
+    <nav class="bg-white shadow-sm py-4 px-6 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <!-- Change h-10 or h-12 to h-16 or h-20 -->
+<img
+  src="/assigment of website 2/images/logo.jpg"
+  alt="SK Enterprise Logo"
+  class="h-16 md:h-20 w-auto object-contain drop-shadow-md"
+/>
+                <div>
+                    <span class="text-xl font-black tracking-wide text-gray-900 block leading-none">SK ENTERPRISE</span>
+                </div>
+            </a>
+            <a href="index.html" class="text-sm font-bold text-gray-500 hover:text-brand-gold transition flex items-center gap-2">
+                <i class="fa-solid fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- BOOKING FORM SECTION -->
+    <section class="flex-grow flex items-center justify-center py-12 px-4">
+        <div class="bg-white max-w-2xl w-full rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+            
+            <div class="bg-brand-dark p-8 text-center">
+                <h1 class="text-3xl font-extrabold text-white">Book a Site Visit</h1>
+                <p class="text-brand-gold text-sm mt-2 font-semibold tracking-widest uppercase">Inquire About Our Projects</p>
+            </div>
+
+           <!-- SUCCESS NOTIFICATION BOX (HIDDEN INITIALLY) -->
+            <div id="success-box" class="hidden p-8 text-center space-y-4">
+                <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto text-3xl">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900">Inquiry Submitted Successfully!</h2>
+                <p class="text-gray-600 text-sm max-w-md mx-auto">
+                    Thank you for reaching out. Your details have been logged in our system, and our team will contact you shortly.
+                </p>
+                <div class="pt-4">
+                    <a href="index.html" class="inline-block bg-brand-dark text-brand-gold font-bold text-sm px-6 py-3 rounded-lg hover:bg-black transition">
+                        Return to Homepage
+                    </a>
+                </div>
+            </div>
+
+            <!-- INQUIRY FORM -->
+            <!-- SUCCESS NOTIFICATION BOX (HIDDEN INITIALLY) -->
+            <div id="success-box" class="hidden p-8 text-center space-y-4">
+                <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto text-3xl">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900">Inquiry Submitted Successfully!</h2>
+                <p class="text-gray-600 text-sm max-w-md mx-auto">
+                    Thank you for reaching out. Your details have been logged in our system, and our team will contact you shortly.
+                </p>
+                <div class="pt-4">
+                    <a href="index.html" class="inline-block bg-brand-dark text-brand-gold font-bold text-sm px-6 py-3 rounded-lg hover:bg-black transition">
+                        Return to Homepage
+                    </a>
+                </div>
+            </div>
+
+            <!-- INQUIRY FORM -->
+            <form id="inquiry-form" onsubmit="handleFormSubmit(event)" class="p-8 space-y-6">
+                
+                <!-- CONTACT INFORMATION (COMPULSORY) -->
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-brand-gold mb-4 border-b pb-2">1. Contact Information</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Full Name -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 uppercase mb-2">Full Name *</label>
+                            <input type="text" id="fname" required placeholder="e.g. Ramesh Patel" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition">
+                        </div>
+                        
+                        <!-- Phone Number with Country Code Dropdown -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 uppercase mb-2">Phone Number *</label>
+                            <div class="flex gap-2">
+                                <select id="fcountry" class="bg-gray-50 border border-gray-300 rounded-lg px-3 py-3 text-sm font-bold text-gray-700 focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition shrink-0">
+                                    <option value="+91" selected>🇮🇳 +91 (IND)</option>
+                                    <option value="+1">🇺🇸 +1 (USA/CAN)</option>
+                                    <option value="+44">🇬🇧 +44 (UK)</option>
+                                    <option value="+971">🇦🇪 +971 (UAE)</option>
+                                    <option value="+966">🇸🇦 +966 (KSA)</option>
+                                    <option value="+61">🇦🇺 +61 (AUS)</option>
+                                    <option value="+65">🇸🇬 +65 (SGP)</option>
+                                    <option value="+254">🇰🇪 +254 (KEN)</option>
+                                    <option value="+27">🇿🇦 +27 (ZAF)</option>
+                                    <option value="+64">🇳🇿 +64 (NZL)</option>
+                                    <option value="+49">🇩🇪 +49 (DEU)</option>
+                                    <option value="+33">🇫🇷 +33 (FRA)</option>
+                                </select>
+                                <input type="tel" id="fphone" required placeholder="98765 43210" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <label class="block text-xs font-bold text-gray-600 uppercase mb-2">Email Address (Optional)</label>
+                        <input type="email" id="femail" placeholder="your.email@example.com" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition">
+                    </div>
+                </div>
+
+                <!-- PROJECT DETAILS (OPTIONAL QUESTIONNAIRE) -->
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-brand-gold mb-4 border-b pb-2">2. Project Requirements (Optional)</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- QUESTION 1 -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 uppercase mb-2">Interested Project / Service</label>
+                            <select id="fproject" onchange="handleProjectChange()" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition">
+                                <option value="">Select an option (Optional)...</option>
+                                <option value="Shivani Residency (Near Railway Station)">Shivani Residency (Near Railway Station)</option>
+                                <option value="Parvati Residency (Near Chapara Road)">Parvati Residency (Near Chapara Road)</option>
+                                <option value="Bhavani Residency (Near Aru Char Rasta)">Bhavani Residency (Near Aru Char Rasta)</option>
+                                <option value="New Land Plotting / Development">New Land Plotting / Development</option>
+                                <option value="Civil Contracting Construction Work">Civil Contracting Construction Work</option>
+                            </select>
+                        </div>
+
+                        <!-- QUESTION 2 (DYNAMIC DROPDOWN) -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 uppercase mb-2">Property Configuration</label>
+                            <select id="fconfig" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition">
+                                <option value="">Select an option (Optional)...</option>
+                                <option value="1 BHK House">1 BHK House</option>
+                                <option value="2 BHK House">2 BHK House</option>
+                                <option value="3 BHK House">3 BHK House</option>
+                                <option value="Commercial Shop / Office only">Commercial Shop / Office only</option>
+                                <option value="Commercial Shop / Office with 1 BHK">Commercial Shop / Office with 1 BHK</option>
+                                <option id="opt-na-plot" value="Residential Land / NA Plot">Residential Land / NA Plot</option>
+                            </select>
+                        </div>
+
+                        <!-- QUESTION 3 -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 uppercase mb-2">Estimated Budget</label>
+                            <select id="fbudget" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition">
+                                <option value="">Select an option (Optional)...</option>
+                                <option value="Under ₹20 Lakhs">Under ₹20 Lakhs</option>
+                                <option value="₹20 Lakhs – ₹35 Lakhs">₹20 Lakhs – ₹35 Lakhs</option>
+                                <option value="₹35 Lakhs – ₹50 Lakhs">₹35 Lakhs – ₹50 Lakhs</option>
+                                <option value="₹50 Lakhs+">₹50 Lakhs+</option>
+                                <option value="Civil Contracting Quote Required">Civil Contracting Quote Required</option>
+                            </select>
+                        </div>
+
+                        <!-- QUESTION 4 -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 uppercase mb-2">Planned Purchase Timeline</label>
+                            <select id="ftimeline" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition">
+                                <option value="">Select an option (Optional)...</option>
+                                <option value="Immediate (Within 15 days)">Immediate (Within 15 days)</option>
+                                <option value="Within 1 to 3 months">Within 1 to 3 months</option>
+                                <option value="Within 3 to 6 months">Within 3 to 6 months</option>
+                                <option value="Just exploring options">Just exploring options</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUBMIT BUTTON -->
+                <button type="submit" id="submit-btn" class="w-full bg-brand-gold text-white text-lg font-bold py-4 rounded-lg shadow-lg hover:bg-yellow-600 transition flex justify-center items-center gap-2">
+                    <span id="btn-text"><i class="fa-solid fa-paper-plane mr-1"></i> Submit Inquiry</span>
+                    <span id="btn-spinner" class="hidden"><i class="fa-solid fa-spinner fa-spin"></i> Submitting to Database...</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-gray-400 text-xs py-6 text-center mt-auto">
+        <p>&copy; 2026 SK Enterprise. Call us at <a href="tel:+919724954022" class="text-brand-gold">+91 97249 54022</a></p>
+    </footer>
+
+<!-- LOGIC SCRIPT -->
+    <script>
+        // 1. Dynamic Dropdown Logic: Hide "Residential Land / NA Plot" if Parvati Residency is selected
+        function handleProjectChange() {
+            const projectVal = document.getElementById('fproject').value;
+            const naPlotOption = document.getElementById('opt-na-plot');
+            const configSelect = document.getElementById('fconfig');
+
+            if (projectVal === 'Parvati Residency (Near Chapara Road)') {
+                naPlotOption.style.display = 'none';
+                if (configSelect.value === 'Residential Land / NA Plot') {
+                    configSelect.value = '';
+                }
+            } else {
+                naPlotOption.style.display = 'block';
+            }
+        }
+
+        // 2. Google Apps Script Webhook Submission
+        function handleFormSubmit(e) {
+            e.preventDefault();
+
+            // Set loading state on button
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText = document.getElementById('btn-text');
+            const btnSpinner = document.getElementById('btn-spinner');
+
+            submitBtn.disabled = true;
+            btnText.classList.add('hidden');
+            btnSpinner.classList.remove('hidden');
+
+            // Collect Payload with separated countryCode and phone
+            const payload = {
+                name: document.getElementById('fname').value,
+                countryCode: document.getElementById('fcountry').value,
+                phone: document.getElementById('fphone').value,
+                email: document.getElementById('femail').value || "Not Provided",
+                project: document.getElementById('fproject').value || "Not Specified",
+                config: document.getElementById('fconfig').value || "Not Specified",
+                budget: document.getElementById('fbudget').value || "Not Specified",
+                timeline: document.getElementById('ftimeline').value || "Not Specified"
+            };
+
+            // INSERT YOUR APPS SCRIPT WEB APP URL BELOW:
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzZTmU8Ox_XC2JNM8gOzFmi9gynPhL8Y3ZqaM1vIL44DGwpSKlvC_j2c7nwPNmac4N1/exec';
+
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(() => {
+                document.getElementById('inquiry-form').classList.add('hidden');
+                document.getElementById('success-box').classList.remove('hidden');
+            })
+            .catch((error) => {
+                console.error('Submission Error:', error);
+                document.getElementById('inquiry-form').classList.add('hidden');
+                document.getElementById('success-box').classList.remove('hidden');
+            });
+        }
+    </script>
+</body>
+</html>

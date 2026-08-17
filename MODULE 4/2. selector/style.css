@@ -1,0 +1,28 @@
+selector {
+    property : value;
+
+}
+h2 {
+    color: blanchedalmond;
+    background-color: black;
+
+}
+p {
+    color:blanchedalmond;
+    background-color: black;
+}
+.daksh {
+    color: aqua;
+    font-weight: bold;
+}
+#this-has-id{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-weight: bolder;
+}
+input[type="text"]{
+border: 5px solid pink;
+}
+button{
+    border: 5px solid pink;
+}
